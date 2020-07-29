@@ -1,0 +1,207 @@
+
+% \iffalse meta-comment
+%
+% Copyright 2020 Matthew-Tate-Scarbrough, Javier Bezos and any individual authors
+% listed elsewhere in this file.  All rights reserved.
+% 
+% This file is intended to be used with the Babel system.
+% ------------------------------------------------------
+% 
+% It may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2003/12/01 or later.
+% 
+% This work has the LPPL maintenance status "maintained".
+% 
+% The Current Maintainer of this work is Matthew-Tate-Scarbrough, Javier Bezos.
+% 
+% The list of derived (unpacked) files belonging to the distribution
+% and covered by LPPL is defined by the unpacking scripts (with
+% extension .ins) which are part of the distribution.
+% \fi
+% \iffalse
+%    Tell the \LaTeX\ system who we are and write an entry on the
+%    transcript.
+%<*dtx>
+\ProvidesFile{southernaltai.dtx}
+%</dtx>
+%<code>\ProvidesLanguage{southernaltai}
+%\fi
+%\ProvidesFile{southernaltai.dtx}
+        [2020/07/29 0.1 Southern Altai support for babel]
+%\iffalse
+%% File `southernaltai.dtx'
+%
+%    This file is part of the babel system, it provides the source
+%    code for the Southernaltai language definition file.
+%<*filedriver>
+\documentclass{ltxdoc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{Title}
+\author{Author} 
+\newcommand*\babel{\textsf{babel}}
+\newcommand*\langvar{$\langle \it lang \rangle$}
+\newcommand*\note[1]{}
+\newcommand*\Lopt[1]{\textsf{#1}}
+\newcommand*\file[1]{\texttt{#1}}
+\begin{document}
+ \maketitle
+ \DocInput{southernaltai.dtx}
+\end{document}
+%</filedriver>
+%\fi
+% \GetFileInfo{southernaltai.dtx}
+%
+%  \section{First section of manual}
+%
+% Text.
+%
+% \StopEventually{}
+%
+%  \subsection*{The code}
+%
+%    \begin{macrocode}
+%<*code>
+\LdfInit{southernaltai}\captionssouthernaltai
+%    \end{macrocode}
+%
+%    When this file is read as an option, i.e. by the |\usepackage|
+%    command, \texttt{southernaltai} could be an `unknown' language in which
+%    case we have to make it known. So we check for the existence of
+%    |\l@southernaltai| to see whether we have to do something here.
+%
+%    \begin{macrocode}
+\ifx\l@southernaltai\@undefined
+  \@nopatterns{Southernaltai}
+  \adddialect\l@southernaltai0\fi
+%    \end{macrocode}
+%
+% \begin{macro}{\captionssouthernaltai}
+%    The macro |\captionssouthernaltai| defines all strings used in the four
+%    standard documentclasses provided with \LaTeX.
+%    \begin{macrocode}
+\StartBabelCommands*{southernaltai}{captions}
+  [unicode, charset=utf8, fontenc=EU1 EU2]
+  \SetString{\prefacename}{Сӧс бажы}
+  \SetString{\refname}{}
+  \SetString{\abstractname}{}
+  \SetString{\bibname}{}
+  \SetString{\chaptername}{Бажалык}
+  \SetString{\appendixname}{}
+  \SetString{\contentsname}{Бажалыктар}
+  \SetString{\listfigurename}{}
+  \SetString{\listtablename}{}
+  \SetString{\indexname}{}
+  \SetString{\figurename}{Јурук}
+  \SetString{\tablename}{}
+  \SetString{\partname}{}
+  \SetString{\enclname}{}
+  \SetString{\ccname}{}
+  \SetString{\headtoname}{}
+  \SetString{\pagename}{}
+  \SetString{\seename}{}
+  \SetString{\alsoname}{}
+  \SetString{\proofname}{}
+  \SetString{\glossaryname}{Сӧзлик}
+
+\StartBabelCommands*{southernaltai}{date}
+  [unicode, charset=utf8, fontenc=EU1 EU2]
+  \SetStringLoop{month#1name}{%
+    ,,,,,,,,,,,}
+%    \end{macrocode}
+%    And now, the generic branch, using the LICR and assuming T1.
+%    \begin{macrocode}
+\StartBabelCommands*{southernaltai}{captions}
+  \SetString{\prefacename}{\CYRS\"\cyro\cyrs\space\cyrb\cyra\cyrzh\cyrery }
+  \SetString{\refname}{}
+  \SetString{\abstractname}{}
+  \SetString{\bibname}{}
+  \SetString{\chaptername}{\CYRB\cyra\cyrzh\cyra\cyrl\cyrery\cyrk}
+  \SetString{\appendixname}{}
+  \SetString{\contentsname}{\CYRB\cyra\cyrzh\cyra\cyrl\cyrery\cyrk\cyrt\cyra\cyrr}
+  \SetString{\listfigurename}{}
+  \SetString{\listtablename}{}
+  \SetString{\indexname}{}
+  \SetString{\figurename}{\CYRJE\cyru\cyrr\cyru\cyrk}
+  \SetString{\tablename}{}
+  \SetString{\partname}{}
+  \SetString{\enclname}{}
+  \SetString{\ccname}{}
+  \SetString{\headtoname}{}
+  \SetString{\pagename}{}
+  \SetString{\seename}{}
+  \SetString{\alsoname}{}
+  \SetString{\proofname}{}
+  \SetString{\glossaryname}{\CYRS\"\cyro\cyrz\cyrl\cyri\cyrk}
+
+\StartBabelCommands*{southernaltai}{date}
+  \SetStringLoop{month#1name}{%
+    ,,,,,,,,,,,}
+  \SetString\today{%
+    }
+\EndBabelCommands
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\extrassouthernaltai}
+% \begin{macro}{\noextrassouthernaltai}
+%    The macro |\extrassouthernaltai| will perform all the extra definitions
+%    needed for the Southernaltai language. The macro |\noextrassouthernaltai| is
+%    used to cancel the actions of |\extrassouthernaltai|.
+%
+%    \begin{macrocode}
+\initiate@active@char{"}
+\declare@shorthand{southernaltai}{"-}{\bbl@hy@soft}
+\declare@shorthand{southernaltai}{"=}{\bbl@hy@hard}
+\declare@shorthand{southernaltai}{"|}{\discretionary{-}{}{kern.03em}}
+%    \end{macrocode}
+%    We specify that the southernaltai group of shorthands should be used.
+%    These characters are `turned on' once, later their definition may
+%    vary. 
+%    \begin{macrocode}
+\addto\extrassouthernaltai{%
+  \bbl@frenchspacing
+  \languageshorthands{southernaltai}%
+  \bbl@activate{"}}
+%    \end{macrocode}
+%
+%    For Southernaltai texts |\frenchspacing| should be in effect. We
+%    make sure this is the case and reset it if necessary.
+%
+%    \begin{macrocode}
+\addto\noextrassouthernaltai{%
+  \bbl@nonfrenchspacing
+  \bbl@deactivate{"}}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+%    \begin{macrocode}
+\ldf@finish{southernaltai}
+%</code>
+%    \end{macrocode}
+%
+% \Finale
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\endinput
