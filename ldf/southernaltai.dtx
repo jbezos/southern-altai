@@ -1,4 +1,3 @@
-
 % \iffalse meta-comment
 %
 % Copyright 2020 Matthew-Tate-Scarbrough, Javier Bezos and any individual authors
@@ -41,9 +40,9 @@
 %<*filedriver>
 \documentclass{ltxdoc}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage[T2A]{fontenc}
 \title{Title}
-\author{Author} 
+\author{Author}
 \newcommand*\babel{\textsf{babel}}
 \newcommand*\langvar{$\langle \it lang \rangle$}
 \newcommand*\note[1]{}
@@ -86,7 +85,7 @@
 %    standard documentclasses provided with \LaTeX.
 %    \begin{macrocode}
 \StartBabelCommands*{southernaltai}{captions}
-  [unicode, charset=utf8, fontenc=EU1 EU2]
+  [unicode, charset=utf8, fontenc=TU]
   \SetString{\prefacename}{Сӧс бажы}
   \SetString{\refname}{}
   \SetString{\abstractname}{}
@@ -110,7 +109,7 @@
   \SetString{\glossaryname}{Сӧзлик}
 
 \StartBabelCommands*{southernaltai}{date}
-  [unicode, charset=utf8, fontenc=EU1 EU2]
+  [unicode, charset=utf8, fontenc=TU]
   \SetStringLoop{month#1name}{%
     ,,,,,,,,,,,}
 %    \end{macrocode}
@@ -150,15 +149,26 @@
 %
 % \begin{macro}{\extrassouthernaltai}
 % \begin{macro}{\noextrassouthernaltai}
-%    The macro |\extrassouthernaltai| will perform all the extra definitions
-%    needed for the Southernaltai language. The macro |\noextrassouthernaltai| is
-%    used to cancel the actions of |\extrassouthernaltai|.
+%    The macro |\extrassouthernaltai| will perform all the extra
+%    definitions needed for the Southernaltai language. The macro
+%    |\noextrassouthernaltai| is used to cancel the actions of
+%    |\extrassouthernaltai|. Some shorthands are taken from
+%    \textsf{russianb}, by Igor A. Kotelnikov.
 %
 %    \begin{macrocode}
 \initiate@active@char{"}
-\declare@shorthand{southernaltai}{"-}{\bbl@hy@soft}
+\declare@shorthand{southernaltai}{"~}{\bbl@hy@soft}
 \declare@shorthand{southernaltai}{"=}{\bbl@hy@hard}
-\declare@shorthand{southernaltai}{"|}{\discretionary{-}{}{kern.03em}}
+\declare@shorthand{southernaltai}{"|}{%
+  \textormath
+    {\nobreak\discretionary{\defaulthyphenchar}{}{\kern.03em}\bbl@allowhyphens}%
+    {}}
+\declare@shorthand{southernaltai}{"`}{\quotedblbase}
+\declare@shorthand{southernaltai}{"'}{\textquotedblleft}
+\declare@shorthand{southernaltai}{"<}{\guillemotleft}
+\declare@shorthand{southernaltai}{">}{\guillemotright}
+\declare@shorthand{southernaltai}{""}{\bbl@hy@empty}
+\declare@shorthand{southernaltai}{"-}{\nobreak\-\bbl@allowhyphens}
 %    \end{macrocode}
 %    We specify that the southernaltai group of shorthands should be used.
 %    These characters are `turned on' once, later their definition may
@@ -167,7 +177,11 @@
 \addto\extrassouthernaltai{%
   \bbl@frenchspacing
   \languageshorthands{southernaltai}%
-  \bbl@activate{"}}
+  \bbl@activate{"}%
+  \ifcase\bbl@engine
+    \fontencoding{T2A}\selectfont
+    \def\defaultencoding{T2A}%
+  \fi}
 %    \end{macrocode}
 %
 %    For Southernaltai texts |\frenchspacing| should be in effect. We
@@ -176,7 +190,11 @@
 %    \begin{macrocode}
 \addto\noextrassouthernaltai{%
   \bbl@nonfrenchspacing
-  \bbl@deactivate{"}}
+  \bbl@deactivate{"}%
+  \ifcase\bbl@engine
+    \fontencoding{\latinencoding}\selectfont
+    \edef\defualtencoding{\latinencoding}%
+  \fi}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
