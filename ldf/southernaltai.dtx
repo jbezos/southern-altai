@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright 2020 Matthew T. Scarbrough, Javier Bezos and any individual authors
+% Copyright 2020 Matthew-Tate-Scarbrough, Javier Bezos and any individual authors
 % listed elsewhere in this file.  All rights reserved.
 % 
 % This file is intended to be used with the Babel system.
@@ -16,7 +16,7 @@
 % 
 % This work has the LPPL maintenance status "maintained".
 % 
-% The Current Maintainer of this work is Matthew T. Scarbrough, Javier Bezos.
+% The Current Maintainer of this work is Matthew-Tate-Scarbrough, Javier Bezos.
 % 
 % The list of derived (unpacked) files belonging to the distribution
 % and covered by LPPL is defined by the unpacking scripts (with
@@ -95,14 +95,14 @@
   \SetString{\contentsname}{Бажалыктар}
   \SetString{\listfigurename}{}
   \SetString{\listtablename}{}
-  \SetString{\indexname}{Кӧргӱзӱ}
-  \SetString{\figurename}{Јур.}
-  \SetString{\tablename}{Таблица}
+  \SetString{\indexname}{}
+  \SetString{\figurename}{Јурук}
+  \SetString{\tablename}{}
   \SetString{\partname}{}
   \SetString{\enclname}{}
   \SetString{\ccname}{}
   \SetString{\headtoname}{}
-  \SetString{\pagename}{Бӱк}
+  \SetString{\pagename}{}
   \SetString{\seename}{}
   \SetString{\alsoname}{}
   \SetString{\proofname}{}
@@ -110,8 +110,8 @@
 
 \StartBabelCommands*{southernaltai}{date}
   [unicode, charset=utf8, fontenc=TU]
-  \SetStringLoop{month#1name}{января,февраля,марта,апреля,мая,июня,%
-    июля,августа,сентября,октября,ноября,декабря}
+  \SetStringLoop{month#1name}{%
+    ,,,,,,,,,,,}
 %    \end{macrocode}
 %    And now, the generic branch, using the LICR and assuming T1.
 %    \begin{macrocode}
@@ -125,14 +125,14 @@
   \SetString{\contentsname}{\CYRB\cyra\cyrzh\cyra\cyrl\cyrery\cyrk\cyrt\cyra\cyrr}
   \SetString{\listfigurename}{}
   \SetString{\listtablename}{}
-  \SetString{\indexname}{\CYRK\"\cyro\cyrr\cyrg\"\cyru\cyrz\"\cyru}
-	\SetString{\figurename}{\CYRJE\cyru\cyrr.}
-  \SetString{\tablename}{\CYRT\cyra\cyrb\cyrl\cyrc\cyra}
+  \SetString{\indexname}{}
+  \SetString{\figurename}{\CYRJE\cyru\cyrr\cyru\cyrk}
+  \SetString{\tablename}{}
   \SetString{\partname}{}
   \SetString{\enclname}{}
   \SetString{\ccname}{}
   \SetString{\headtoname}{}
-  \SetString{\pagename}{\CYRB\"\syru\cyrk}
+  \SetString{\pagename}{}
   \SetString{\seename}{}
   \SetString{\alsoname}{}
   \SetString{\proofname}{}
@@ -140,52 +140,10 @@
 
 \StartBabelCommands*{southernaltai}{date}
   \SetStringLoop{month#1name}{%
-    \cyrya\cyrn\cyrv\cyra\cyrr\cyrya,%
-    \cyrf\cyre\cyrv\cyrr\cyra\cyrl\cyrya,%
-    \cyrm\cyra\cyrr\cyrt\cyra,
-    \cyra\cyrp\cyrr\cyre\cyrl\cyrya,%
-    \cyrm\cyra\cyrya,%
-    \cyri\cyryu\cyrn\cyrya,%
-    \cyri\cyryu\cyrl\cyrya,%
-    \cyra\cyrv\cyrg\cyru\cyrs\cyrt\cyra,%
-    \cyrs\cyre\cyrn\cyrt\cyrya\cyrb\cyrr\cyrya,%
-    \cyro\cyrk\cyrt\cyrya\cyrb\cyrr\cyrya,%
-    \cyrn\cyro\cyrya\cyrb\cyrr\cyrya,%
-    \cyrd\cyre\cyrk\cyra\cyrb\cyrr\cyrya%
-  }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                                                       %%%
-%%%   TODO: Altai has a short-hand date.  I assume that the same also     %%%
-%%%   exists in Russian.                                                  %%%
-%%%                                                                       %%%
-%%%   The long form is:    1 января 2020 ј. (d month yyyy y.[ear])        %%%
-%%%   The short form:      1.1.2020 ј.      (d.m.yyyy y.[ear])            %%%
-%%%                                                                       %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\SetString\today{%
-    \number\day
-    \space\ifcase
-      \month\or
-      \cyrya\cyrn\cyrv\cyra\cyrr\cyrya\or%
-      \cyrf\cyre\cyrv\cyrr\cyra\cyrl\cyrya\or%
-      \cyrm\cyra\cyrr\cyrt\cyra\or
-      \cyra\cyrp\cyrr\cyre\cyrl\cyrya\or%
-      \cyrm\cyra\cyrya\or%
-      \cyri\cyryu\cyrn\cyrya\or%
-      \cyri\cyryu\cyrl\cyrya\or%
-      \cyra\cyrv\cyrg\cyru\cyrs\cyrt\cyra\or%
-      \cyrs\cyre\cyrn\cyrt\cyrya\cyrb\cyrr\cyrya\or%
-      \cyro\cyrk\cyrt\cyrya\cyrb\cyrr\cyrya\or%
-      \cyrn\cyro\cyrya\cyrb\cyrr\cyrya\or%
-      \cyrd\cyre\cyrk\cyra\cyrb\cyrr\cyrya%
-    \fi
-    \space\number\year
-    \space{\cyrje}.
-}
+    ,,,,,,,,,,,}
+  \SetString\today{%
+    }
 \EndBabelCommands
-
 %    \end{macrocode}
 % \end{macro}
 %
